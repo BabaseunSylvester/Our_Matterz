@@ -3,8 +3,10 @@ package com.example.ourmatterz.data
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
+import com.example.ourmatterz.BuildConfig
 import com.example.ourmatterz.data.network.ApiService
 import com.example.ourmatterz.data.room.BookmarksDatabase
+import com.google.gson.internal.GsonBuildConfig
 import okhttp3.Cache
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
@@ -20,7 +22,7 @@ interface Container {
 class AppContainer(private val context: Context) : Container {
 
     private val baseUrl = "https://newsapi.org/v2/"
-    private val apiKey = "0564a67afd824ad7a5126f100d7e98aa"
+    private val apiKey = BuildConfig.NEWS_API_KEY
 
     val cacheSize = (10 * 1024 * 1024).toLong()
     val cacheDir = File(context.cacheDir, "news_cache")

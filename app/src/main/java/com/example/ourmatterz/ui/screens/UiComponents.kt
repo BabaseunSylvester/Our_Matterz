@@ -76,7 +76,7 @@ fun CategoriesBar(
             .background(color = CardDefaults.cardColors().containerColor, shape = RoundedCornerShape(8.dp))
             .clip(RoundedCornerShape(8.dp))
     ) {
-        items(items = categories, key = {it.first}) { item ->
+        items(items = categories.subList(1, categories.size - 1), key = {it.first}) { item ->
             Row {
                 VerticalDivider(color = Color.Gray, modifier = Modifier.height(26.dp).width(2.dp))
                 Spacer(Modifier.width(4.dp))
